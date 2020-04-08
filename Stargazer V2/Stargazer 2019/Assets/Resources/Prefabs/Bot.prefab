@@ -425,7 +425,7 @@ MonoBehaviour:
     m_Bits: 0
   weaponPrefab: {fileID: 1522153295813046, guid: 8117a15f9a9047344a6aa01d352903c4,
     type: 3}
-  deathExplosion: {fileID: 1408889015858618, guid: 4beea29c4266b3a4eaf4edef23201b97,
+  deathExplosion: {fileID: 1408889015858618, guid: 508c5e26be07e244aafc93f8d7c83adc,
     type: 3}
   targetRef: {fileID: 0}
   detectionRange: 200

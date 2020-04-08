@@ -386,7 +386,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   targetRef: {fileID: 0}
-  explosion: {fileID: 1552462462865192, guid: fe9219572ab08134c9d72d378eef4984, type: 3}
+  explosion: {fileID: 1552462462865192, guid: 62a994add56c9b94d9ad0039ccd2a837, type: 3}
   detectionRange: 50
   explodeRange: 4
   explosiveRadius: 10

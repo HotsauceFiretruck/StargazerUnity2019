@@ -108,9 +108,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageValue: 5
-  initParticle: {fileID: 1277476900267786, guid: 13d7d8cf710a5bc47a602720cacfc741,
+  initParticle: {fileID: 1277476900267786, guid: 8ab1e2905165feb4694605122efe1a88,
     type: 3}
-  destroyParticle: {fileID: 1644829574213772, guid: f0fb986f3081ed14faa432d460548fb2,
+  destroyParticle: {fileID: 1644829574213772, guid: 85c3ef7f46fa1b54d8f86355a84eef3d,
     type: 3}
 --- !u!54 &54158955577509728
 Rigidbody:

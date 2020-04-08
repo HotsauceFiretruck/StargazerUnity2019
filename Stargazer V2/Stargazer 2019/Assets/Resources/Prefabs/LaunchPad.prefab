@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f74e40f1eb777c4da95430dc2468e04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 1490354034485476, guid: 2d00d027009ccbe4583cb8654efb7653, type: 3}
+  explosion: {fileID: 1490354034485476, guid: 14f5325f106ed3d4a8f803b25b91a94a, type: 3}
   explosiveForce: 20
 --- !u!1 &1809767151326174
 GameObject:

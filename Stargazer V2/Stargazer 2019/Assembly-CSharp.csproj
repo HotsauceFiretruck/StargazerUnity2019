@@ -93,8 +93,24 @@
     <Compile Include="Assets\Scripts\Weapons\Shotgun.cs" />
     <Compile Include="Assets\Scripts\Weapons\Sniper.cs" />
     <Compile Include="Assets\Scripts\Weapons\SpiderCannon.cs" />
-    <Compile Include="Assets\Sprites\Scripts\VoxelSoundSpawn.cs" />
+    <Compile Include="Assets\Sprites\SpriteMunzleFlash\AnimatedTexture.cs" />
+    <Compile Include="Assets\Sprites\Voxel Arsenal\Demo\Scripts\VoxelBeamScript.cs" />
+    <Compile Include="Assets\Sprites\Voxel Arsenal\Demo\Scripts\VoxelButtonScript.cs" />
+    <Compile Include="Assets\Sprites\Voxel Arsenal\Demo\Scripts\VoxelFireProjectile.cs" />
+    <Compile Include="Assets\Sprites\Voxel Arsenal\Demo\Scripts\VoxelLoopScript.cs" />
+    <Compile Include="Assets\Sprites\Voxel Arsenal\Demo\Scripts\VoxelOrbit.cs" />
+    <Compile Include="Assets\Sprites\Voxel Arsenal\Demo\Scripts\VoxelProjectileScript.cs" />
+    <Compile Include="Assets\Sprites\Voxel Arsenal\Demo\Scripts\VoxelSceneSelect.cs" />
+    <Compile Include="Assets\Sprites\Voxel Arsenal\Demo\Scripts\VoxelTarget.cs" />
+    <Compile Include="Assets\Sprites\Voxel Arsenal\Scripts\VoxelBeamStatic.cs" />
+    <Compile Include="Assets\Sprites\Voxel Arsenal\Scripts\VoxelLightFade.cs" />
+    <Compile Include="Assets\Sprites\Voxel Arsenal\Scripts\VoxelRotation.cs" />
+    <Compile Include="Assets\Sprites\Voxel Arsenal\Scripts\VoxelSoundSpawn.cs" />
     <Compile Include="Assets\UI\UI_Scripts\StartButton.cs" />
+    <None Include="Assets\Sprites\Voxel Arsenal\Shaders\VoxelLitSurface.shader" />
+    <None Include="Assets\Sprites\Sprites.txt" />
+    <None Include="Assets\Sprites\Voxel Arsenal\Voxel Arsenal - Readme.txt" />
+    <None Include="Assets\Sprites\Voxel Arsenal\Shaders\VoxelRimLightSolid.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/d4wso/Desktop/Stargazer2019/Stargazer V2/Stargazer 2019/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
