@@ -1147,7 +1147,7 @@ PrefabInstance:
         type: 3}
       propertyPath: timeManager
       value: 
-      objectReference: {fileID: 1345596151}
+      objectReference: {fileID: 0}
     - target: {fileID: 114071696527710810, guid: bbdad6a17596931488d73f3f462b99e7,
         type: 3}
       propertyPath: weaponPrefab
@@ -3107,7 +3107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetRef: {fileID: 1541755708}
-  effect: {fileID: 1297617410832350, guid: c99c85ffcbc94d242ba8f49343c9a01c, type: 3}
+  effect: {fileID: 1297617410832350, guid: 6008993ae0018b349bece046ab7be75c, type: 3}
   revealRange: 35
 --- !u!1001 &1175062259
 PrefabInstance:
@@ -3539,18 +3539,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1976714090}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1345596151 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1748884660898667856, guid: bbdad6a17596931488d73f3f462b99e7,
-    type: 3}
-  m_PrefabInstance: {fileID: 370792655}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf553c45f157c6246bc667c32649239b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1345766623
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3722,7 +3710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetRef: {fileID: 1541755708}
-  effect: {fileID: 1297617410832350, guid: c99c85ffcbc94d242ba8f49343c9a01c, type: 3}
+  effect: {fileID: 1297617410832350, guid: 6008993ae0018b349bece046ab7be75c, type: 3}
   revealRange: 35
 --- !u!4 &1431579325 stripped
 Transform:
@@ -3749,7 +3737,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetRef: {fileID: 1541755708}
-  effect: {fileID: 1297617410832350, guid: c99c85ffcbc94d242ba8f49343c9a01c, type: 3}
+  effect: {fileID: 1297617410832350, guid: 6008993ae0018b349bece046ab7be75c, type: 3}
   revealRange: 35
 --- !u!1 &1471491799
 GameObject:
@@ -4293,9 +4281,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa4db585aeef79841893a966330d6b8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetRef: {fileID: 1541755708}
-  effect: {fileID: 1297617410832350, guid: c99c85ffcbc94d242ba8f49343c9a01c, type: 3}
-  revealRange: 35
+  targetRef: {fileID: 0}
+  effect: {fileID: 0}
+  revealRange: 20
 --- !u!1001 &1727540192
 PrefabInstance:
   m_ObjectHideFlags: 0

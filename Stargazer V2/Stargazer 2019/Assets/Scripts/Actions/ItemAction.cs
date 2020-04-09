@@ -67,7 +67,6 @@ public class ItemAction : MonoBehaviour
 
             item.transform.parent = transform;
             item.transform.localPosition = Quaternion.Euler(Vector3.right * holdingAngle) * Vector3.forward * holdingDistance;
-            print(item.transform.localPosition);
             item.transform.eulerAngles = transform.eulerAngles;
             item.transform.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
 
