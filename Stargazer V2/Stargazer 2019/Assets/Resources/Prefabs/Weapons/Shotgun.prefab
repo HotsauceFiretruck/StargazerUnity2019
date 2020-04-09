@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 4036911481841786}
   - component: {fileID: 54154345054315520}
   - component: {fileID: 114630930007879414}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Shotgun
   m_TagString: Item
   m_Icon: {fileID: 0}

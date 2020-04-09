@@ -23,7 +23,7 @@ public class InteractionControl : MonoBehaviour
             Ray ray = new Ray(orientation.transform.position, orientation.transform.forward);
             RaycastHit hitInfo;
 
-            if (Physics.Raycast(ray, out hitInfo, 5, LayerMask.NameToLayer("Item")))
+            if (Physics.Raycast(ray, out hitInfo, 5))
             {
                 if (hitInfo.transform.tag == "Item")
                 {

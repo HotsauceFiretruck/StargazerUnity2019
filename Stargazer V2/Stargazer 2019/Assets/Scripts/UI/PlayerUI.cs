@@ -13,9 +13,9 @@ public class PlayerUI : MonoBehaviour
 
     public void Start()
     {
-        txtAmmo = GameObject.Find("PlayerUI/AmmoCounter").GetComponent<Text>();
-        txtInventory = GameObject.Find("PlayerUI/Inventory").GetComponent<Text>();
-        txtHealth = GameObject.Find("PlayerUI/HealthCounter").GetComponent<Text>();
+        txtAmmo = GameObject.Find("PlayerUI/Canvas/AmmoCounter").GetComponent<Text>();
+        txtInventory = GameObject.Find("PlayerUI/Canvas/Inventory").GetComponent<Text>();
+        txtHealth = GameObject.Find("PlayerUI/Canvas/HealthCounter").GetComponent<Text>();
 
         playerInventory.inventoryChangeCallback += OnInventoryChange;
     }
