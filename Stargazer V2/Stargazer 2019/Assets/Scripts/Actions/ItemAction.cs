@@ -7,7 +7,7 @@ public class ItemAction : MonoBehaviour
     public float defaultHoldingAngle;
     protected Entity ownerEntity;
 
-    void Start()
+    void Awake()
     {
         ownerEntity = GetComponent<Entity>();
     }

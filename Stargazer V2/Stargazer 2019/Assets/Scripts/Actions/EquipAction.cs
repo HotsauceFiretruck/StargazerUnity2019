@@ -2,6 +2,7 @@
 
 public class EquipAction : ItemAction
 {
+
     public void EquipItem(Equipment item, Transform transform)
     {
         if (item.itemData.ownerEntity == null)
