@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d01f0ecb42ea35e4f99dafaa6030a07a, type: 3}
+  m_Name: SpiderCannon
+  m_EditorClassIdentifier: 
+  itemName: Spider Cannon
+  maxStackAmount: 1
+  itemPrefab: {fileID: 1667242071933008, guid: 53c2da1aac85b0249803b4679cc9948a, type: 3}
+  ownerEntity: {fileID: 0}
+  equipmentType: 0
+  maxAmmoCount: 10000
+  currentAmmoCount: 10000
+  damageModifier: 1
+  maxReloadTime: 0.1
+  ammoSpeed: 35
+  ammoRange: 150
+  ammoType: {fileID: 1200003978224132, guid: a9c6e64470da75e4d8e2d9731bfc53a6, type: 3}
+  maxNumberOfCannonBalls: 50
+  currentNumberOfCannonBalls: 50
+  maxCannonReloadTime: 2
+  cannonBallSpeed: 20
+  cannonBallRange: 500
+  rotateSpeed: 1.5
+  cannonBallType: {fileID: 1224410915434162, guid: 788973715b697124fae1a8dd8e2053d5,
+    type: 3}

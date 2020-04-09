@@ -1,42 +1,88 @@
 ﻿using UnityEngine;
 using System;
 
-public class Inventory : MonoBehaviour {
-    [NonSerialized]
-    public GameObject[] items;
-    public int maxItems = 4;
-    [NonSerialized]
-    public int numberOfItems = 0;
-    [NonSerialized]
-    public bool isUpdateSyncUI = false; //signals UI to update list and change this value in UI
+public class Inventory : MonoBehaviour
+{
+    ItemData[] items;
+    int currentNumberOfItems = 0;
+    public int maxNumberOfSlots = 4;
 
-    void Start() {
-        items = new GameObject[maxItems];
+    public delegate void OnInventoryChange();
+    public OnInventoryChange inventoryChangeCallback;
+
+    void Start()
+    {
+        items = new ItemData[maxNumberOfSlots];
     }
 
-    public bool Store(GameObject item) {
-        if (numberOfItems < 5 && item.transform.tag == "Equipment") {
+    public bool StoreItem(Item item)
+    {
+        if (currentNumberOfItems < maxNumberOfSlots)
+        {
             int nextEmptySlot = Array.IndexOf(items, null);
-            items[nextEmptySlot] = item;
+            items[nextEmptySlot] = item.itemData;
+            Destroy(item.gameObject);
+            currentNumberOfItems++;
 
-            item.SetActive(false);
-            numberOfItems++;
-            isUpdateSyncUI = true;
+            if (inventoryChangeCallback != null)
+            {
+                inventoryChangeCallback.Invoke();
+            }
+
+            item.itemData.isStored = true;
 
             return true;
         }
         return false;
     }
 
-    public GameObject GetItem(int slotNumber) {
-        GameObject item = items[slotNumber];
-        if (item != null) {
-            items[slotNumber] = null;
-            item.SetActive(true);
-            numberOfItems--;
-            isUpdateSyncUI = true;
+    public Item ReturnItem(int index)
+    {
+        if (items[index] != null)
+        {
+            ItemData itemData = items[index];
+            GameObject itemObject = (GameObject)Instantiate(items[index].itemPrefab);
+            Item item = itemObject.GetComponent<Item>();
+
+            if (item != null)
+            {
+                DestroyImmediate(item.itemData);
+                item.itemData = itemData;
+            }
+
+            items[index] = null;
+            currentNumberOfItems--;
+
+            if (inventoryChangeCallback != null)
+            {
+                inventoryChangeCallback.Invoke();
+            }
+
+            item.itemData.isStored = false;
+
+            return item;
         }
-        return item;
+        return null;
     }
 
+    public void RemoveItem(int index)
+    {
+        if (items[index] != null)
+        {
+            DestroyImmediate(items[index]);
+
+            items[index] = null;
+            currentNumberOfItems--;
+
+            if (inventoryChangeCallback != null)
+            {
+                inventoryChangeCallback.Invoke();
+            }
+        }
+    }
+
+    public ItemData[] GetAllItemData()
+    {
+        return items;
+    }
 }

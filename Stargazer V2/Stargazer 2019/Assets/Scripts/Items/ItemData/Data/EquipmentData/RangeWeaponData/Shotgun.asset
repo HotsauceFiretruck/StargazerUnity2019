@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a1d5376026c6644a8b9805e3f9a2ce4, type: 3}
+  m_Name: Shotgun
+  m_EditorClassIdentifier: 
+  itemName: Shotgun
+  maxStackAmount: 1
+  itemPrefab: {fileID: 1439612635014264, guid: 082366e6d54a90c438e1e82a53dcbadb, type: 3}
+  ownerEntity: {fileID: 0}
+  equipmentType: 0
+  maxAmmoCount: 30
+  currentAmmoCount: 30
+  damageModifier: 1
+  maxReloadTime: 2.5
+  ammoSpeed: 65
+  ammoRange: 100
+  ammoType: {fileID: 1200003978224132, guid: a9c6e64470da75e4d8e2d9731bfc53a6, type: 3}

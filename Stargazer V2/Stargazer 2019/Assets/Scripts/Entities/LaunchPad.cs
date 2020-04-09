@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class LaunchPad : MonoBehaviour {
+public class LaunchPad : MonoBehaviour
+{
 
 	public GameObject explosion;
 	public float explosiveForce = 25;
 
-	void Explode(Rigidbody rb) {
+	void Explode(Rigidbody rb)
+	{
 		Vector3 direction = transform.rotation * Vector3.up;
 		rb.AddForce(direction * explosiveForce, ForceMode.Impulse);
 		GameObject explode = Instantiate(explosion, transform.position, transform.rotation) as GameObject;
@@ -15,10 +17,12 @@ public class LaunchPad : MonoBehaviour {
 		Destroy(explode, totalDuration);
 	}
 
-	void OnTriggerEnter(Collider other) {
+	void OnTriggerEnter(Collider other)
+	{
 		Rigidbody rb = other.GetComponent<Rigidbody>();
 
-		if (rb != null) {
+		if (rb != null)
+		{
 			Explode(rb);
 		}
 	}

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-public class Node : IHeapItem<Node> {
+public class Node : IHeapItem<Node>
+{
 
 	public bool walkable;
 	public Vector3 worldPosition;
@@ -13,7 +14,8 @@ public class Node : IHeapItem<Node> {
 	public int hCost;
 	int heapIndex;
 
-	public Node(bool walkable, Vector3 worldPos, int gridX, int gridY, int weight) {
+	public Node(bool walkable, Vector3 worldPos, int gridX, int gridY, int weight)
+	{
 		this.walkable = walkable;
 		this.worldPosition = worldPos;
 		this.gridX = gridX;
@@ -21,26 +23,34 @@ public class Node : IHeapItem<Node> {
 		this.weight = weight;
 	}
 
-	public int fCost {
-		get {
+	public int fCost
+	{
+		get
+		{
 			return gCost + hCost;
 		}
 	}
 
-	public int HeapIndex {
-		get {
+	public int HeapIndex
+	{
+		get
+		{
 			return heapIndex;
 		}
-		set {
+		set
+		{
 			heapIndex = value;
 		}
 	}
 
-	public int CompareTo(Node node) {
+	public int CompareTo(Node node)
+	{
 		int compare = fCost.CompareTo(node.fCost);
-		if (compare == 0) {
+		if (compare == 0)
+		{
 			compare = hCost.CompareTo(node.hCost);
 		}
 		return -compare;
 	}
 }
+

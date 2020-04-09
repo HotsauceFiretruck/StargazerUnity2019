@@ -2502,7 +2502,7 @@ MonoBehaviour:
   unwalkableMask:
     serializedVersion: 2
     m_Bits: 512
-  gridWorldSize: {x: 200, y: 100}
+  gridWorldSize: {x: 100, y: 100}
   nodeRadius: 1
 --- !u!4 &993048702
 Transform:
@@ -2582,7 +2582,7 @@ PrefabInstance:
         type: 3}
       propertyPath: timeManager
       value: 
-      objectReference: {fileID: 1014393742}
+      objectReference: {fileID: 0}
     - target: {fileID: 114071696527710810, guid: bbdad6a17596931488d73f3f462b99e7,
         type: 3}
       propertyPath: weaponPrefab
@@ -2591,18 +2591,6 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbdad6a17596931488d73f3f462b99e7, type: 3}
---- !u!114 &1014393742 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1748884660898667856, guid: bbdad6a17596931488d73f3f462b99e7,
-    type: 3}
-  m_PrefabInstance: {fileID: 1014393741}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf553c45f157c6246bc667c32649239b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1015426890
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,56 +1,68 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerUI : MonoBehaviour {
+public class PlayerUI : MonoBehaviour
+{
+    public Entity player;
+    public Health playerHealth;
+    public Inventory playerInventory;
 
-	public Entity player;
-	public Health playerHealth;
-	public Inventory playerInventory;
+    private Text txtAmmo;
+    private Text txtHealth;
+    private Text txtInventory;
 
-	private Text txtAmmo;
-	private Text txtHealth;
-	private Text txtInventory;
+    public void Start()
+    {
+        txtAmmo = GameObject.Find("PlayerUI/AmmoCounter").GetComponent<Text>();
+        txtInventory = GameObject.Find("PlayerUI/Inventory").GetComponent<Text>();
+        txtHealth = GameObject.Find("PlayerUI/HealthCounter").GetComponent<Text>();
 
-	private string inventoryDisp = "";
+        playerInventory.inventoryChangeCallback += OnInventoryChange;
+    }
 
-	public void Start() {
-		txtAmmo = GameObject.Find("PlayerUI/AmmoCounter").GetComponent<Text>();
-		txtInventory = GameObject.Find("PlayerUI/Inventory").GetComponent<Text>();
-		txtHealth = GameObject.Find("PlayerUI/HealthCounter").GetComponent<Text>();
-	}
+    public void WeaponDisplay()
+    {
+        Equipment weaponEquipment = player.equipments[EquipmentType.Weapon];
+        if (weaponEquipment != null)
+        {
+            RangeWeapon rangeWeapon = weaponEquipment as RangeWeapon;
+            if (rangeWeapon != null)
+            {
+                txtAmmo.text = "Ammo: " + rangeWeapon.GetAmmoCount();
+            }
+        }
+        else
+        {
+            txtAmmo.text = "No range weapon selected";
+        }
+    }
 
-	public void Ammo() {
-		if (player.equipment != null) {
-			txtAmmo.text = "Ammo: " + player.equipment.GetAmmoCount();
-		}
-		else {
-			txtAmmo.text = "No weapon selected";
-		}
-	}
+    public void HealthDisplay()
+    {
+        if (playerHealth != null)
+        {
+            txtHealth.text = "Health: " + playerHealth.entityHealth;
+        }
+    }
 
-	public void Health() {
-		if (playerHealth != null) {
-			txtHealth.text = "Health: " + playerHealth.entityHealth;
-		}
-	}
+    public void OnInventoryChange()
+    {
+        if (playerInventory != null)
+        {
+            string inventoryDisp = "";
+            ItemData[] items = playerInventory.GetAllItemData();
+            for (int i = 0; i < playerInventory.maxNumberOfSlots; i++)
+            {
+                if (items[i] != null)
+                    inventoryDisp += i + 1 + ": " + items[i].itemName + " | ";
+            }
+            txtInventory.text = "Inventory: " + inventoryDisp;
+        }
+    }
 
-	public void Inventory() {
-		if (playerInventory != null && playerInventory.isUpdateSyncUI) {
-			inventoryDisp = "";
-			for (int i = 0; i < playerInventory.maxItems; i++) {
-				if (playerInventory.items[i] != null)
-					inventoryDisp += i + 1 + ": " + playerInventory.items[i].GetComponent<Equipment>().id + " | ";
-			}
-			playerInventory.isUpdateSyncUI = false;
-		}
-		txtInventory.text = "Inventory: " + inventoryDisp;
-	}
-
-	public void Update() {
-		Ammo();
-		Health();
-		Inventory();
-	}
+    public void Update()
+    {
+        WeaponDisplay();
+        HealthDisplay();
+    }
 }

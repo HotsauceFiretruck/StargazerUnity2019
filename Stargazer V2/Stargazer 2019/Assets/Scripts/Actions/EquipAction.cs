@@ -1,54 +1,133 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class EquipAction : MonoBehaviour {
-	//Holding angle is in degrees
-	public float holdingDistance;
-	public float droppingDistance;
-
-	private Entity ownerEntity;
-
-	void Awake() {
-		ownerEntity = GetComponent<Entity>();
-	}
-
-    public void OnEquip(Equipment item, Transform transform) {
-        item.ownerEntity = ownerEntity;
-        item.transform.parent = transform;
-        ownerEntity.equipment = item;
-
-        Rigidbody body = item.GetComponent<Rigidbody>();
-        body.isKinematic = true;
-        body.useGravity = false;
-        body.detectCollisions = false;
-
-        item.transform.localPosition = Vector3.forward * holdingDistance;
-
-        item.transform.eulerAngles = transform.eulerAngles;
-        item.transform.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
-    }
-
-    public void OnDrop(Equipment item) {
-        //Player special rule: if drop then turn visible
-        if (ownerEntity.gameObject.tag == "Player") {
-            MeshRenderer[] renders = item.transform.GetComponentsInChildren<MeshRenderer>();
-            foreach (MeshRenderer r in renders) {
-                r.enabled = true;
-            }
+public class EquipAction : ItemAction
+{
+    public void EquipItem(Equipment item, Transform transform)
+    {
+        if (item.itemData.ownerEntity == null)
+        {
+            item.itemData.ownerEntity = ownerEntity;
         }
 
-        item.transform.gameObject.layer = LayerMask.NameToLayer("Item");
+        if (item.itemData.ownerEntity == ownerEntity && !item.itemData.isStored && item != null)
+        {
+            EquipmentData data = item.itemData as EquipmentData;
+            if (data != null)
+            {
+                if (ownerEntity.equipments[data.equipmentType] != null)
+                {
+                    UnequipItem(ownerEntity.equipments[data.equipmentType]);
+                }
 
-        Rigidbody body = item.GetComponent<Rigidbody>();
-        body.isKinematic = false;
-        body.useGravity = true;
-        body.detectCollisions = true;
+                if (data.equipmentType == EquipmentType.Weapon)
+                {
+                    ownerEntity.equipments[EquipmentType.Weapon] = item;
+                    HoldItem(item, transform);
+                }
+                else if (data.equipmentType == EquipmentType.Footwear)
+                {
+                    ownerEntity.equipments[EquipmentType.Footwear] = item;
+                    item.transform.parent = transform;
+                    item.transform.localPosition = Vector3.zero;
 
-        body.AddForce(item.transform.rotation * Vector3.forward * 4, ForceMode.Impulse);
+                    MeshRenderer[] renders = item.GetComponentsInChildren<MeshRenderer>();
 
-        item.ownerEntity = null;
-        item.transform.parent = null;
-        ownerEntity.equipment = null;
+                    foreach (MeshRenderer r in renders)
+                    {
+                        r.enabled = false;
+                    }
+
+                    Rigidbody rb = item.GetComponent<Rigidbody>();
+                    if (rb != null)
+                    {
+                        rb.isKinematic = true;
+                        rb.useGravity = false;
+                        rb.detectCollisions = false;
+                    }
+                }
+
+                item.OnEquipped();
+            }
+        }
+    }
+
+    public void UnequipItem(Equipment item)
+    {
+        if (item.itemData.ownerEntity == ownerEntity && !item.itemData.isStored && item != null)
+        {
+            EquipmentData data = item.itemData as EquipmentData;
+            if (data != null)
+            {
+                item.Deactivate();
+                item.OnUnequipped();
+
+                if (ownerEntity.equipments[data.equipmentType] == item)
+                {
+                    ownerEntity.equipments[data.equipmentType] = null;
+                }
+
+                if (ownerEntity.currentHoldingItem == item)
+                {
+                    ownerEntity.currentHoldingItem = null;
+                }
+
+                //Try to store the item. If fail, then drop the item.
+                Inventory inventory = ownerEntity.GetComponent<Inventory>();
+                if (inventory != null)
+                {
+                    bool success = inventory.StoreItem(item);
+
+                    if (!success)
+                    {
+                        DropItem(item);
+                    }
+                }
+                else
+                {
+                    DropItem(item);
+                }
+            }
+        }
+    }
+
+    public override void DropItem(Item item)
+    {
+        if (item.itemData.ownerEntity == ownerEntity && !item.itemData.isStored && item != null)
+        {
+            EquipmentData data = (EquipmentData)item.itemData;
+            if (data != null)
+            {
+                Equipment equipment = (Equipment)item;
+                equipment.OnUnequipped();
+
+                item.Deactivate();
+
+                if (ownerEntity.equipments[data.equipmentType] == item) ownerEntity.equipments[data.equipmentType] = null;
+                if (ownerEntity.currentHoldingItem == item) ownerEntity.currentHoldingItem = null;
+
+                item.transform.gameObject.layer = LayerMask.NameToLayer("Item");
+
+                MeshRenderer[] renders = item.GetComponentsInChildren<MeshRenderer>();
+
+                foreach (MeshRenderer r in renders)
+                {
+                    r.enabled = true;
+                }
+
+                Rigidbody rb = item.GetComponent<Rigidbody>();
+                if (rb != null)
+                {
+                    rb.isKinematic = false;
+                    rb.useGravity = true;
+                    rb.detectCollisions = true;
+
+                    rb.AddForce(item.transform.rotation * Vector3.forward * 4, ForceMode.Impulse);
+                }
+
+                item.itemData.ownerEntity = null;
+                item.transform.parent = null;
+
+            }
+        }
     }
 }

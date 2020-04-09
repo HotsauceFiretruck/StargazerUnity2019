@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a1d5376026c6644a8b9805e3f9a2ce4, type: 3}
+  m_Name: Rifle
+  m_EditorClassIdentifier: 
+  itemName: Rifle
+  maxStackAmount: 1
+  itemPrefab: {fileID: 1490747722129716, guid: 9678f3e72c2f36041b7c2de82b77b264, type: 3}
+  ownerEntity: {fileID: 0}
+  equipmentType: 0
+  maxAmmoCount: 50
+  currentAmmoCount: 50
+  damageModifier: 1.6
+  maxReloadTime: 0.1
+  ammoSpeed: 60
+  ammoRange: 100
+  ammoType: {fileID: 1200003978224132, guid: a9c6e64470da75e4d8e2d9731bfc53a6, type: 3}

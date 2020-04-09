@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BomberAI : Entity {
+public class BomberAI : Entity
+{
 
 	[SerializeField]
 	private Transform targetRef;
@@ -19,7 +20,8 @@ public class BomberAI : Entity {
 
 	private MovementAI movementAI;
 
-	void Start() {
+	void Start()
+	{
 		this.direction = this.transform.eulerAngles;
 		this.position = this.transform.position;
 		this.currentSpeed = 0.0f;
@@ -29,7 +31,8 @@ public class BomberAI : Entity {
 		movementAI = GetComponent<MovementAI>();
 	}
 
-	void CheckStatus() {
+	void CheckStatus()
+	{
 
 		Vector3 dir = targetRef.position - transform.position;
 		RaycastHit hitInfoCenter;
@@ -53,91 +56,114 @@ public class BomberAI : Entity {
 		Ray rayCanBeSeen = new Ray(position, dir);
 		bool center = Physics.Raycast(rayCanBeSeen, out hitInfoCenter);
 
-		if (left && right && center) {
+		if (left && right && center)
+		{
 			if (hitInfoCenter.transform.tag == "Player" &&
 				hitInfoLeft.transform.tag == "Player" &&
-				hitInfoRight.transform.tag == "Player") {
+				hitInfoRight.transform.tag == "Player")
+			{
 				targetCanBeSeen = true;
 			}
-			else {
+			else
+			{
 				targetCanBeSeen = false;
 			}
 		}
-		else {
+		else
+		{
 			targetCanBeSeen = false;
 		}
 
 		//if target is within the spotting range then activate target spotted
-		if (Vector3.Distance(targetRef.position, transform.position) >= detectionRange) {
+		if (Vector3.Distance(targetRef.position, transform.position) >= detectionRange)
+		{
 			targetDetected = false;
 		}
-		else {
+		else
+		{
 			targetDetected = true;
 		}
 
-		if (Vector3.Distance(targetRef.position, transform.position) >= explodeRange) {
+		if (Vector3.Distance(targetRef.position, transform.position) >= explodeRange)
+		{
 			commitT = false;
 		}
-		else {
+		else
+		{
 			commitT = true;
 		}
 	}
 
-	void Explode() {
+	void Explode()
+	{
 		GameObject explode = Instantiate(explosion, transform.position, transform.rotation) as GameObject;
 		ParticleSystem parts = explode.GetComponent<ParticleSystem>();
 		float totalDuration = parts.main.duration + parts.main.startLifetime.constant;
 		Destroy(explode, totalDuration);
 
 		Collider[] colliders = Physics.OverlapSphere(transform.position, explosiveRadius);
-		for (int i = 0; i < colliders.Length; i++) {
+		for (int i = 0; i < colliders.Length; i++)
+		{
 			Transform otherTransform = colliders[i].transform;
 			if (otherTransform.tag != "Entity" && otherTransform.tag != "Player") continue;
 			if (otherTransform == transform) continue;
 
 			Rigidbody body = otherTransform.GetComponent<Rigidbody>();
 			Health health = otherTransform.GetComponent<Health>();
-			if (body != null) {
+			if (body != null)
+			{
 				body.AddExplosionForce(explosiveForce, transform.position, explosiveRadius, 5, ForceMode.Impulse);
 			}
-			if (health != null) {
+			if (health != null)
+			{
 				health.ChangeHealthBy(damage);
 			}
 		}
 	}
 
-	public override void Death() {
+	public override void Death()
+	{
 		Explode();
 		Destroy(this.gameObject);
 	}
 
-	void AIBehavior() {
+	void AIBehavior()
+	{
 		//If target is spotted...
-		if (targetDetected) {
-			if (movementAI != null) {
-				if (!targetCanBeSeen || !commitT) {
+		if (targetDetected)
+		{
+			if (movementAI != null)
+			{
+				if (!targetCanBeSeen || !commitT)
+				{
 					movementAI.NavigateTo(targetRef.position);
 				}
-				else {
+				else
+				{
 					movementAI.EndNavigation();
 				}
 			}
 
-			if (commitT) {
+			if (commitT)
+			{
 				Death();
 			}
 		}
 	}
 
-	void Update() {
-		if (targetRef != null) {
+	void Update()
+	{
+		if (targetRef != null)
+		{
 			CheckStatus();
 			AIBehavior();
 		}
 	}
 
-	private void FixedUpdate() {
-		if (this.currentSpeed != 0.0f) {
+	private void FixedUpdate()
+	{
+		if (this.currentSpeed != 0.0f)
+		{
 			transform.Translate(Vector3.forward * this.currentSpeed * Time.fixedDeltaTime);
 			this.position = transform.position;
 		}
