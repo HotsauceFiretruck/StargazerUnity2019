@@ -3108,7 +3108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetRef: {fileID: 1541755708}
   effect: {fileID: 1297617410832350, guid: 6008993ae0018b349bece046ab7be75c, type: 3}
-  revealRange: 20
+  revealRange: 35
 --- !u!1001 &1175062259
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3736,9 +3736,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa4db585aeef79841893a966330d6b8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetRef: {fileID: 0}
-  effect: {fileID: 0}
-  revealRange: 20
+  targetRef: {fileID: 1541755708}
+  effect: {fileID: 1297617410832350, guid: 6008993ae0018b349bece046ab7be75c, type: 3}
+  revealRange: 35
 --- !u!1 &1471491799
 GameObject:
   m_ObjectHideFlags: 0
