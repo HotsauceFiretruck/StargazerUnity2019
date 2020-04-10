@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Sniper
   maxStackAmount: 1
-  itemPrefab: {fileID: 1612088307050924, guid: c6c2d57afaa11bf4f854fd986c646e1e, type: 3}
+  itemPrefab: {fileID: 170632, guid: 9f2d2b0c577d28e42ba06ee013624466, type: 3}
   ownerEntity: {fileID: 0}
   equipmentType: 0
   maxAmmoCount: 15
   currentAmmoCount: 15
   damageModifier: 5
   maxReloadTime: 1.25
-  ammoSpeed: 12
+  ammoSpeed: 35
   ammoRange: 200
   ammoType: {fileID: 1200003978224132, guid: a9c6e64470da75e4d8e2d9731bfc53a6, type: 3}
