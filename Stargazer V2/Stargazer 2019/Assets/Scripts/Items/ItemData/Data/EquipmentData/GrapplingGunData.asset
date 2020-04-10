@@ -19,6 +19,5 @@ MonoBehaviour:
   equipmentType: 0
   grappableLayer:
     serializedVersion: 2
-    m_Bits: 2048
-  gunTip: {fileID: 0}
+    m_Bits: 2560
   maxDistance: 100
