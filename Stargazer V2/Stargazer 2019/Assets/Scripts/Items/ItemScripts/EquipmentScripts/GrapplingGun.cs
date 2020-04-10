@@ -12,6 +12,8 @@ public class GrapplingGun : Equipment
     private LineRenderer lr;
     private Vector3 grapplePoint;
     public bool isEquipped = false;
+    private Quaternion desiredRotation;
+    private float rotationSpeed = 5f;
 
     void Awake()
     {
@@ -78,14 +80,15 @@ public class GrapplingGun : Equipment
     {
         if(isEquipped)
         {
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButtonDown(0))
             {
                 StartGrapple();
             }
-            else if (Input.GetMouseButtonUp(1))
+            else if (Input.GetMouseButtonUp(0))
             {
                 StopGrapple();
             }
+
         }
     }
 
