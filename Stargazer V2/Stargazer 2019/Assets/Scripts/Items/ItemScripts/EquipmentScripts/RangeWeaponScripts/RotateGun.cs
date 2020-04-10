@@ -3,7 +3,7 @@
 public class RotateGun : MonoBehaviour
 {
 
-    public GrapplingGun grappling;
+    public GrappleGun grappling;
 
     private Quaternion desiredRotation;
     private float rotationSpeed = 5f;

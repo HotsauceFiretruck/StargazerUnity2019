@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class GrapplingGun : MonoBehaviour
+public class GrappleGun : MonoBehaviour
 {
 
     private LineRenderer lr;
