@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4612765964953393036}
   - component: {fileID: 1172604205772876091}
   m_Layer: 0
-  m_Name: SK_Wep_Pistol_01
+  m_Name: RevolverV2
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
