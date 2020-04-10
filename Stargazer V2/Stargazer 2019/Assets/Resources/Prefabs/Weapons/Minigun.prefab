@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2341730}
   - component: {fileID: 64975799590915702}
   m_Layer: 0
-  m_Name: SK_Wep_MiniGun_01
+  m_Name: Minigun
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 3307984}
   - component: {fileID: 2335396}
   m_Layer: 0
-  m_Name: SK_Wep_MiniGun_Barrel_01
+  m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
