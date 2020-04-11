@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Shotgun
   maxStackAmount: 1
-  itemPrefab: {fileID: 1439612635014264, guid: 082366e6d54a90c438e1e82a53dcbadb, type: 3}
+  itemPrefab: {fileID: 183082, guid: 179f98de9f307824aaabfb066e9c69a5, type: 3}
   ownerEntity: {fileID: 0}
   equipmentType: 0
   maxAmmoCount: 30
   currentAmmoCount: 30
   damageModifier: 1
   maxReloadTime: 2.5
-  ammoSpeed: 65
+  ammoSpeed: 35
   ammoRange: 100
   ammoType: {fileID: 1200003978224132, guid: a9c6e64470da75e4d8e2d9731bfc53a6, type: 3}

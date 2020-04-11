@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Revolver
   maxStackAmount: 1
-  itemPrefab: {fileID: 1522153295813046, guid: 8117a15f9a9047344a6aa01d352903c4, type: 3}
+  itemPrefab: {fileID: 138118, guid: db6a0c86b67c48442b89b7263ce25074, type: 3}
   ownerEntity: {fileID: 0}
   equipmentType: 0
   maxAmmoCount: 20
   currentAmmoCount: 20
   damageModifier: 1
   maxReloadTime: 0.6
-  ammoSpeed: 65
+  ammoSpeed: 35
   ammoRange: 100
   ammoType: {fileID: 1200003978224132, guid: a9c6e64470da75e4d8e2d9731bfc53a6, type: 3}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0945cd0d5a137394595d756d56cf1884, type: 3}
   m_Name: RocketBoot
   m_EditorClassIdentifier: 
-  itemName: Default Name
+  itemName: Rocket Boot
   maxStackAmount: 1
   itemPrefab: {fileID: 1783971159021922, guid: 8abef2eb58d1d2d44af00e13dd2cd1fa, type: 3}
   ownerEntity: {fileID: 0}

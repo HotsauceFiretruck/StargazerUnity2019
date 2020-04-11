@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Rifle
   maxStackAmount: 1
-  itemPrefab: {fileID: 1490747722129716, guid: 9678f3e72c2f36041b7c2de82b77b264, type: 3}
+  itemPrefab: {fileID: 105184, guid: c60108c8eeb1eb24fbead32586fcc558, type: 3}
   ownerEntity: {fileID: 0}
   equipmentType: 0
   maxAmmoCount: 50
   currentAmmoCount: 50
   damageModifier: 1.6
   maxReloadTime: 0.1
-  ammoSpeed: 60
+  ammoSpeed: 35
   ammoRange: 100
   ammoType: {fileID: 1200003978224132, guid: a9c6e64470da75e4d8e2d9731bfc53a6, type: 3}
