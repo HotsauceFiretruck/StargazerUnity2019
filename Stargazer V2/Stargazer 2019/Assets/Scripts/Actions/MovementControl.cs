@@ -6,6 +6,7 @@ public class MovementControl : MonoBehaviour
     Rigidbody entityBody;
 
     public LayerMask groundLayer;
+    public LayerMask wallLayer;
     public Transform orientation;
     public float jumpForce;
 
@@ -36,6 +37,7 @@ public class MovementControl : MonoBehaviour
     void Jump()
     {
         bool isGrounded = Physics.CheckSphere(transform.position - entityCollider.bounds.extents.y * Vector3.up, 0.2f, groundLayer, QueryTriggerInteraction.Ignore);
+        if (!isGrounded) isGrounded = Physics.CheckSphere(transform.position - entityCollider.bounds.extents.y * Vector3.up, 0.2f, wallLayer, QueryTriggerInteraction.Ignore);
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {

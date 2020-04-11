@@ -420,8 +420,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnSpeed: 10
   maxSpeed: 5
-  weaponPrefab: {fileID: 1522153295813046, guid: 8117a15f9a9047344a6aa01d352903c4,
-    type: 3}
+  weaponPrefab: {fileID: 138118, guid: db6a0c86b67c48442b89b7263ce25074, type: 3}
   deathExplosion: {fileID: 1408889015858618, guid: 508c5e26be07e244aafc93f8d7c83adc,
     type: 3}
   targetRef: {fileID: 0}

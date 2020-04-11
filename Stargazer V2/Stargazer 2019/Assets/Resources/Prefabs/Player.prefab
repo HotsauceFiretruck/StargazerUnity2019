@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2e33455d2fe5eb409c449d4bca17e66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityHealth: 100
+  entityHealth: 500
 --- !u!114 &6730947114136648681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,6 +267,9 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 512
   orientation: {fileID: 4695059702029774}
   jumpForce: 9
 --- !u!114 &4056784781326946271
