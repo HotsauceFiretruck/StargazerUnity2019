@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-
 public class MovementControl : MonoBehaviour
 {
     Entity ownerEntity;
@@ -34,29 +33,6 @@ public class MovementControl : MonoBehaviour
         }
     }
 
-    public void ApplyForceToReachVelocity(Rigidbody rigidbody, Vector2 _velocity, float force = 1, ForceMode mode = ForceMode.VelocityChange)
-    {
-        if (force == 0 || _velocity.magnitude == 0)
-            return;
-
-        _velocity = _velocity + _velocity.normalized * 0.2f * rigidbody.drag;
-
-        //force = 1 => need 1 s to reach velocity (if mass is 1) => force can be max 1 / Time.fixedDeltaTime
-        force = Mathf.Clamp(force, -rigidbody.mass / Time.fixedDeltaTime, rigidbody.mass / Time.fixedDeltaTime);
-
-        if (rigidbody.velocity.magnitude == 0)
-        {
-            rigidbody.AddForce(new Vector3(_velocity.x, 0, _velocity.y) * force, mode);
-        }
-        else
-        {
-            Vector2 velocityProjectedToTarget = (_velocity.normalized * Vector2.Dot(_velocity, new Vector2(rigidbody.velocity.x, rigidbody.velocity.z)) / _velocity.magnitude);
-            Vector2 dV = _velocity - velocityProjectedToTarget;
-            rigidbody.AddForce(new Vector3(dV.x, 0, dV.y) * force, mode);
-        }
-
-    }
-
     void Jump()
     {
         bool isGrounded = Physics.CheckSphere(transform.position - entityCollider.bounds.extents.y * Vector3.up, 0.2f, groundLayer, QueryTriggerInteraction.Ignore);
@@ -84,7 +60,10 @@ public class MovementControl : MonoBehaviour
 
     void FixedUpdate()
     {
-        ApplyForceToReachVelocity(entityBody, ownerEntity.velocity, 0.1f, ForceMode.VelocityChange);
-        ownerEntity.position = transform.position;
+        if (ownerEntity.velocity != Vector2.zero)
+        {
+            entityBody.MovePosition(entityBody.position + new Vector3(ownerEntity.velocity.x, 0, ownerEntity.velocity.y) * Time.deltaTime);
+            ownerEntity.position = transform.position;
+        }
     }
 }
