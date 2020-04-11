@@ -13,7 +13,6 @@ public class GrapplingGun : Equipment
     private Vector3 grapplePoint;
     public bool isEquipped = false;
     private Quaternion desiredRotation;
-    private float rotationSpeed = 5f;
 
     void Awake()
     {
@@ -78,7 +77,7 @@ public class GrapplingGun : Equipment
 
     void Update()
     {
-        if(isEquipped)
+        if (isEquipped)
         {
             if (Input.GetMouseButtonDown(0))
             {

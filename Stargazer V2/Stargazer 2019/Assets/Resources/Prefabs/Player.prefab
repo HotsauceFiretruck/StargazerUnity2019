@@ -128,7 +128,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1410798628367396}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.99, y: 0.99, z: 0.99}
   m_Children:
   - {fileID: 4695059702029774}
@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2e33455d2fe5eb409c449d4bca17e66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityHealth: 100
+  entityHealth: 500
 --- !u!114 &6730947114136648681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,6 +267,9 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 512
   orientation: {fileID: 4695059702029774}
   jumpForce: 9
 --- !u!114 &4056784781326946271
@@ -322,7 +325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnSpeed: 8
-  maxSpeed: 7
+  maxSpeed: 5
   playerView: {fileID: 20262539963679808}
   weaponPrefab: {fileID: 1522153295813046, guid: 8117a15f9a9047344a6aa01d352903c4,
     type: 3}

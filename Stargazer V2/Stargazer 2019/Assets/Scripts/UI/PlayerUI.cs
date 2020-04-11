@@ -54,7 +54,7 @@ public class PlayerUI : MonoBehaviour
             for (int i = 0; i < playerInventory.maxNumberOfSlots; i++)
             {
                 if (items[i] != null)
-                    inventoryDisp += i + 1 + ": " + items[i].itemName + " | ";
+                    inventoryDisp += "[" + (i + 1) + "] " + items[i].itemName + " ";
             }
             txtInventory.text = "Inventory: " + inventoryDisp;
         }
