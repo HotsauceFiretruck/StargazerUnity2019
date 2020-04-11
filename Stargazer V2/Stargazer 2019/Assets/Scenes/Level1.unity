@@ -658,9 +658,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1183832925}
-  - {fileID: 1625007474}
   - {fileID: 1289361422}
+  - {fileID: 1625007474}
+  - {fileID: 1183832925}
   - {fileID: 1167432441}
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -3856,7 +3856,7 @@ MonoBehaviour:
   unwalkableMask:
     serializedVersion: 2
     m_Bits: 512
-  gridWorldSize: {x: 200, y: 100}
+  gridWorldSize: {x: 100, y: 100}
   nodeRadius: 1
 --- !u!4 &1730544178
 Transform:
