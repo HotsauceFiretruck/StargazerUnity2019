@@ -36,7 +36,10 @@ public class ScopeControl : MonoBehaviour
 
     public void Reset()
     {
-        view.fieldOfView = normalFOV;
+        if (view != null)
+        {
+            view.fieldOfView = normalFOV;
+        }
     }
 
     void Update()
