@@ -325,7 +325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnSpeed: 8
-  maxSpeed: 5
+  maxSpeed: 9
   playerView: {fileID: 20262539963679808}
   weaponPrefab: {fileID: 1522153295813046, guid: 8117a15f9a9047344a6aa01d352903c4,
     type: 3}
