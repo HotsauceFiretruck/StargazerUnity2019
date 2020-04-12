@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fee49073531f5e438b900051e58497c, type: 3}
+  m_Name: GrapplingGunData
+  m_EditorClassIdentifier: 
+  itemName: Grappling Gun
+  maxStackAmount: 1
+  itemPrefab: {fileID: 1522153295813046, guid: 8117a15f9a9047344a6aa01d352903c4, type: 3}
+  ownerEntity: {fileID: 0}
+  equipmentType: 0
+  grappableLayer:
+    serializedVersion: 2
+    m_Bits: 2560
+  maxDistance: 100

@@ -790,7 +790,7 @@ GameObject:
   - component: {fileID: 4376125216346380}
   - component: {fileID: 54310114639281478}
   - component: {fileID: 114930815877037606}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpiderCannon
   m_TagString: Item
   m_Icon: {fileID: 0}

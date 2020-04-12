@@ -6,8 +6,8 @@ public class MovementAI : MonoBehaviour
 
     public float turnDistance = 1;
     public float maxAvoidForce = 10.0f;
-    const float pathUpdateMoveThreshold = 1f;
-    const float minPathUpdateTime = 3f;
+    const float pathUpdateMoveThreshold = .5f;
+    const float minPathUpdateTime = 1f;
     private Vector3 targetPosition;
     private Entity parent;
 

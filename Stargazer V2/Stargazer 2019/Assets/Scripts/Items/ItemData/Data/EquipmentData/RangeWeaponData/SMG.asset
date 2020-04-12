@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: SMG
   maxStackAmount: 1
-  itemPrefab: {fileID: 1520331144770920, guid: 687428dbfa973bc4d8d4ddd426aecbf8, type: 3}
+  itemPrefab: {fileID: 156028, guid: 1244328dc9d61d64cbbca3badf3c34d0, type: 3}
   ownerEntity: {fileID: 0}
   equipmentType: 0
   maxAmmoCount: 100
   currentAmmoCount: 100
   damageModifier: 0.6
   maxReloadTime: 0.035
-  ammoSpeed: 55
+  ammoSpeed: 35
   ammoRange: 100
   ammoType: {fileID: 1200003978224132, guid: a9c6e64470da75e4d8e2d9731bfc53a6, type: 3}

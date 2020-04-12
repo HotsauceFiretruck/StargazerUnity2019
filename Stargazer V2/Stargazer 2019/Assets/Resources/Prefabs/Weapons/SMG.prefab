@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 4820852729033210}
   - component: {fileID: 54115864198930332}
   - component: {fileID: 114114725512828264}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SMG
   m_TagString: Item
   m_Icon: {fileID: 0}

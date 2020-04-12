@@ -18,7 +18,7 @@ public class OrientationControl : MonoBehaviour
         float mouseY = Input.GetAxis("Mouse Y") * ownerEntity.turnSpeed * 20 * Time.deltaTime;
         if (mouseX != 0 || mouseY != 0)
         {
-            yAngle = Mathf.Clamp(yAngle - mouseY, -90f, 60f);
+            yAngle = Mathf.Clamp(yAngle - mouseY, -90f, 90f);
             orientation.localRotation = Quaternion.Euler(yAngle, orientation.localEulerAngles.y + mouseX, 0f);
 
             ownerEntity.direction = orientation.rotation * Vector3.forward;
