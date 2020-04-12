@@ -8,13 +8,16 @@ public class SpiderCannonData : RangeWeaponData
     public int maxNumberOfCannonBalls = 100;
     public int currentNumberOfCannonBalls = 100;
     public float maxCannonReloadTime = 10.0f;
+    public float maxBombardReloadTime = .1f;
     public float cannonBallSpeed = 3.0f;
     public float cannonBallRange = 500.0f;
 
     [NonSerialized]
     public float currentCannonReloadTime = 0;
+    [NonSerialized]
+    public float currentBombardReloadTime = 0;
 
-    public float rotateSpeed = 1.5f; //Rotations per Second
+    public float rotateSpeed = .1f; //Rotations per Second
 
     public GameObject cannonBallType;
 }

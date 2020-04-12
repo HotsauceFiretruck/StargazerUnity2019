@@ -7,6 +7,7 @@ TagManager:
   - Entity
   - Item
   - Missile
+  - End Game
   layers:
   - Default
   - TransparentFX

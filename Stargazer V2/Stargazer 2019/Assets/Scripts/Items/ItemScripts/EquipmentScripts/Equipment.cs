@@ -3,4 +3,5 @@
     public virtual void OnEquipped() { }
     public virtual void OnUnequipped() { }
     public virtual void ActivateSecondary() { }
+    public virtual void ActivateTertiary() { }
 }

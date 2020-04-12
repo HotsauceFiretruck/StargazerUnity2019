@@ -18,7 +18,7 @@ public class InteractionControl : MonoBehaviour
     void WorldInteraction()
     {
         //Obtain Item
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             Ray ray = new Ray(orientation.transform.position, orientation.transform.forward);
             RaycastHit hitInfo;
@@ -34,7 +34,7 @@ public class InteractionControl : MonoBehaviour
         }
 
         //Drop Item
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             Ray ray = new Ray(orientation.position, orientation.forward);
             RaycastHit hitInfo;

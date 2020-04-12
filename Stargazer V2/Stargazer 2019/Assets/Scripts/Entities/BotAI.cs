@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BotAI : Entity
 {
@@ -33,7 +31,7 @@ public class BotAI : Entity
         targetDetected = targetCanBeSeen = targetInLineOfSight = targetInShootingRange = false;
 
         movementAI = GetComponent<MovementAI>();
-        GameObject weaponObject = (GameObject)Instantiate(weaponPrefab);
+        GameObject weaponObject = Instantiate(weaponPrefab);
         RangeWeapon weapon = weaponObject.GetComponent<RangeWeapon>();
 
         equipAction = GetComponent<EquipAction>();
