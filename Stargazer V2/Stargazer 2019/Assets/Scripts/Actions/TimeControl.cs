@@ -9,7 +9,7 @@ public class TimeControl : MonoBehaviour
     {
         if (!PauseMenu.IsGamePaused())
         {
-            if (Input.GetKeyDown(KeyCode.T))
+            if (Input.GetMouseButton(1))
             {
                 ActivateSlowMotion();
             }
