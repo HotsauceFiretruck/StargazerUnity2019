@@ -20,4 +20,4 @@ MonoBehaviour:
   grappableLayer:
     serializedVersion: 2
     m_Bits: 2048
-  maxDistance: 100
+  maxDistance: 150
