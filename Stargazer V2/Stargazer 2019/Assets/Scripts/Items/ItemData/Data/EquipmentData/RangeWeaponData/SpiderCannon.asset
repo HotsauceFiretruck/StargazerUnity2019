@@ -27,8 +27,9 @@ MonoBehaviour:
   maxNumberOfCannonBalls: 50
   currentNumberOfCannonBalls: 50
   maxCannonReloadTime: 2
+  maxBombardReloadTime: 0.05
   cannonBallSpeed: 20
   cannonBallRange: 500
-  rotateSpeed: 1.5
+  rotateSpeed: 2
   cannonBallType: {fileID: 1224410915434162, guid: 788973715b697124fae1a8dd8e2053d5,
     type: 3}
