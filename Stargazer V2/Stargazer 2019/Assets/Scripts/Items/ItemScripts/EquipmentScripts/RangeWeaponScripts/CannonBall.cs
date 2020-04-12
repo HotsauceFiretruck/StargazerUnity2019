@@ -2,7 +2,6 @@
 
 public class CannonBall : MonoBehaviour
 {
-
     private float speed;
     private float range;
     private Vector3 velocity;
@@ -14,6 +13,9 @@ public class CannonBall : MonoBehaviour
 
     public GameObject initParticle;
     public GameObject destroyParticle;
+
+    public float explosiveRadius = 5;
+    public float explosiveForce = 5;
 
     void Start()
     {
@@ -58,6 +60,25 @@ public class CannonBall : MonoBehaviour
         ParticleSystem parts = explode.GetComponent<ParticleSystem>();
         float totalDuration = parts.main.duration + parts.main.startLifetime.constant;
         Destroy(explode, totalDuration);
+
+        Collider[] colliders = Physics.OverlapSphere(transform.position, explosiveRadius);
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            Transform otherTransform = colliders[i].transform;
+            if (otherTransform.tag != "Entity" && otherTransform.tag != "Player") continue;
+            if (otherTransform == transform) continue;
+
+            Rigidbody body = otherTransform.GetComponent<Rigidbody>();
+            Health health = otherTransform.GetComponent<Health>();
+            if (body != null)
+            {
+                body.AddExplosionForce(explosiveForce, transform.position, explosiveRadius, 5, ForceMode.Impulse);
+            }
+            if (health != null)
+            {
+                health.ChangeHealthBy(damageModifier);
+            }
+        }
 
         Destroy(this.gameObject);
     }
