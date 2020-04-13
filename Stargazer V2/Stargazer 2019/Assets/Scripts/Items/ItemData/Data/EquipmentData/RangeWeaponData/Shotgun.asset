@@ -20,7 +20,7 @@ MonoBehaviour:
   maxAmmoCount: 30
   currentAmmoCount: 30
   damageModifier: 1
-  maxReloadTime: 2.5
+  maxReloadTime: 1.5
   ammoSpeed: 35
   ammoRange: 100
   ammoType: {fileID: 1200003978224132, guid: a9c6e64470da75e4d8e2d9731bfc53a6, type: 3}

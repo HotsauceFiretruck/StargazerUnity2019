@@ -18,9 +18,15 @@ public class PauseMenu : MonoBehaviour
             }
             else
             {
+                GameManager.lastLevelDeath = SceneManager.GetActiveScene().buildIndex;
                 Pause();
             }
         }
+    }
+
+    private void Start()
+    {
+        Resume();
     }
 
     public void Resume()
