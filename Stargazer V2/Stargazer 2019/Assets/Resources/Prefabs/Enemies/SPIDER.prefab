@@ -233,6 +233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityHealth: 2000
+  optionalExplosionEffect: {fileID: 0}
 --- !u!114 &3867847843175566814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,13 +260,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ebf7e4b3ba8e2f4f836021627bb6bf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnSpeed: 50
+  turnSpeed: 75
   maxSpeed: 5
   targetRef: {fileID: 0}
   weaponPrefab: {fileID: 1667242071933008, guid: 53c2da1aac85b0249803b4679cc9948a,
     type: 3}
   deathExplosion: {fileID: 1144577030218068, guid: 16979bde1591d874d939047f9390e60c,
     type: 3}
+  maxInterval: 4
 --- !u!1 &1571213457250048
 GameObject:
   m_ObjectHideFlags: 0

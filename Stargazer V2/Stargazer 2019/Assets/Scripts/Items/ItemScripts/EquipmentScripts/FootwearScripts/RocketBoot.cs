@@ -41,7 +41,7 @@ public class RocketBoot : Equipment
     {
         if (isEquipped)
         {
-            if (data.currentReloadTime <= 0)
+            if (data.currentReloadTime <= 0 && entityMovement != null)
             {
                 if (Input.GetKey(KeyCode.LeftShift))
                 {
