@@ -12,6 +12,8 @@
 - Shoot gun: Left click
 - Activate slow motion: Right click
 - Use rocket boots: Press shift while moving in any dirention
+- Pause menu: Esc
+- To leave credits: Any key
 
 **Directions For Each Level**
 - Level 1: Defeat all enemies. Pick up the key and go to the door and click the door while holding the key.
