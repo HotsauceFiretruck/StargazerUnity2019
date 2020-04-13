@@ -45,6 +45,17 @@ public class EquipAction : ItemAction
                         rb.useGravity = false;
                         rb.detectCollisions = false;
                     }
+
+                    Collider c = item.GetComponent<Collider>();
+                    Collider[] cs = item.GetComponentsInChildren<Collider>();
+                    if (c != null)
+                    {
+                        c.enabled = true;
+                    }
+                    foreach (Collider child in cs)
+                    {
+                        child.enabled = true;
+                    }
                 }
 
                 item.OnEquipped();
@@ -125,9 +136,19 @@ public class EquipAction : ItemAction
                     rb.AddForce(item.transform.rotation * Vector3.forward * 4, ForceMode.Impulse);
                 }
 
+                Collider c = item.GetComponent<Collider>();
+                Collider[] cs = item.GetComponentsInChildren<Collider>();
+                if (c != null)
+                {
+                    c.enabled = true;
+                }
+                foreach (Collider child in cs)
+                {
+                    child.enabled = true;
+                }
+
                 item.itemData.ownerEntity = null;
                 item.transform.parent = null;
-
             }
         }
     }

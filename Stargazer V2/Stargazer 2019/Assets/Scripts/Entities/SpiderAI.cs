@@ -18,6 +18,8 @@ public class SpiderAI : Entity
     private float time = 0;
     public int maxInterval = 4;
     private bool activate = false;
+    public delegate void OnSpiderActivated();
+    public OnSpiderActivated spiderActivated;
 
     void Start()
     {
@@ -69,6 +71,10 @@ public class SpiderAI : Entity
                 if (Vector3.Distance(targetRef.position, transform.position) <= 40.0f)
                 {
                     activate = true;
+                    if (spiderActivated != null)
+                    {
+                        spiderActivated.Invoke();
+                    }
                 }
             }
             else
