@@ -26,7 +26,7 @@ public class Rifle : RangeWeapon
                 Vector3 position = this.transform.GetChild(0).position + bulletDirection * .2f;
 
                 GameObject ammoClone = (GameObject)Instantiate(data.ammoType, position, this.transform.rotation);
-                ammoClone.transform.localScale = new Vector3(0.05f, .05f, .05f);
+                ammoClone.transform.localScale = new Vector3(0.5f, .5f, .5f);
                 Bullet bullet = ammoClone.GetComponent<Bullet>();
                 bullet.Init(bulletDirection, data.ammoSpeed, data.ammoRange);
                 bullet.SetDamageModifier(data.damageModifier);
