@@ -76,7 +76,7 @@ public class CannonBall : MonoBehaviour
             }
             if (health != null)
             {
-                health.ChangeHealthBy(damageModifier);
+                health.ChangeHealthBy(5);
             }
         }
 
