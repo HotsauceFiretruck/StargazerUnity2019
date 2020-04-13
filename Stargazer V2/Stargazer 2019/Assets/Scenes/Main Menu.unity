@@ -1493,7 +1493,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Game Designers: \n\n\n\nProgrammers:\n\n\nModelers:\n\n\nLevel Desingers:\n\n\n\n\nAI
-    Developers:\n\nUI Developers:\n\n\nSpecial Thanks To Our Lord And Savor:\n\n\n\n\n\n\n\n\n\n\n\n"
+    Developers:\n\nUI Developers:\n\n\nSpecial Thanks To Our Lord And Savior:\n\n\n\n\n\n\n\n\n\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1562,12 +1562,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 322453975}
-    characterCount: 150
+    characterCount: 151
     spriteCount: 0
     spaceCount: 43
     wordCount: 17
     linkCount: 0
-    lineCount: 32
+    lineCount: 33
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -2711,8 +2711,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00007534027, y: -986.75}
-  m_SizeDelta: {x: 336.1, y: 218.7}
+  m_AnchoredPosition: {x: 0.00007534027, y: -1014.9}
+  m_SizeDelta: {x: 336.1, y: 275.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &619250994
 MonoBehaviour:
@@ -2749,7 +2749,12 @@ MonoBehaviour:
     "Visual Code Is Broken on Unity!"
 
     Jimmy
-    Pham Ho'
+    Pham Ho
+
+
+    "I''m lucky I got up at noon today"
+
+    Kris Simmonds'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2818,12 +2823,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 619250994}
-    characterCount: 145
+    characterCount: 195
     spriteCount: 0
-    spaceCount: 27
-    wordCount: 25
+    spaceCount: 38
+    wordCount: 35
     linkCount: 0
-    lineCount: 10
+    lineCount: 13
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
