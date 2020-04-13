@@ -15,7 +15,8 @@ public class EndGame : MonoBehaviour
                 {
                     if (hitInfo.transform.CompareTag("End Game"))
                     {
-                        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                        GameManager.gameEnded = true;
+                        SceneManager.LoadScene(0);
                     }
                 }
             }

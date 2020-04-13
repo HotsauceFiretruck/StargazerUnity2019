@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -27,6 +28,12 @@ public class Health : MonoBehaviour
                 Entity entity = this.gameObject.GetComponent<Entity>();
                 if (entity != null)
                 {
+                    if (entity.transform.CompareTag("Player"))
+                    {
+                        GameManager.lastLevelDeath = SceneManager.GetActiveScene().buildIndex;
+                        SceneManager.LoadScene(7);
+                    }
+                     
                     entity.Death();
                 } else
                 {
@@ -40,6 +47,7 @@ public class Health : MonoBehaviour
                     }
 
                     Destroy(gameObject);
+
                 }
             }
         }
