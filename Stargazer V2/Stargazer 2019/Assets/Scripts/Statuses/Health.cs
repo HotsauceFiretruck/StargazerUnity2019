@@ -31,7 +31,7 @@ public class Health : MonoBehaviour
                     if (entity.transform.CompareTag("Player"))
                     {
                         GameManager.lastLevelDeath = SceneManager.GetActiveScene().buildIndex;
-                        SceneManager.LoadScene(7);
+                        SceneManager.LoadScene(8);
                     }
                      
                     entity.Death();

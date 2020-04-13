@@ -6,6 +6,7 @@ public class PauseMenu : MonoBehaviour
     public static bool isGamePaused = false;
 
     public GameObject pauseMenuUI;
+    
 
     void Update()
     {
@@ -24,16 +25,20 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         isGamePaused = false;
+        print("Resume");
     }
 
     void Pause()
     {
+        Cursor.lockState = CursorLockMode.None;
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         isGamePaused = true;
+        print("Pause");
     }
 
     public void LoadMenu()
@@ -50,6 +55,8 @@ public class PauseMenu : MonoBehaviour
 
     public static bool IsGamePaused()
     {
+        
         return isGamePaused;
+       
     }
 }
