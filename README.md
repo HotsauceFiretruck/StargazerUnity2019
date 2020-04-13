@@ -1,5 +1,7 @@
 # Stargazer2019
 
+![](Images/Menu.PNG)
+
 **Developers:**
 - Alex Dawson
 - Jimmy Pham Ho
