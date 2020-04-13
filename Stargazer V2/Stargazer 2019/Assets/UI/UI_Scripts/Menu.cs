@@ -11,7 +11,10 @@ public class Menu : MonoBehaviour
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 	}
 
-
-
+	public void QuitGame()
+	{
+		Debug.Log("Quit Game");
+		Application.Quit();
+	}
 
 }
