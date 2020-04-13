@@ -792,10 +792,10 @@ RectTransform:
   m_Father: {fileID: 641219581}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -259}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: -354, y: -604}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &233535669
 MonoBehaviour:
@@ -840,20 +840,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
+      - m_Target: {fileID: 1146555795}
+        m_MethodName: QuitGame
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 641219580}
-        m_MethodName: SetActive
-        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1482,8 +1471,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -131.64996, y: -331.7749}
-  m_SizeDelta: {x: 152, y: 487.55}
+  m_AnchoredPosition: {x: -226.5, y: -331.76}
+  m_SizeDelta: {x: 341.8, y: 487.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &322453975
 MonoBehaviour:
@@ -1503,8 +1492,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Game Designers: \n\n\n\nProgrammers:\n\n\nModelers:\n\n\nLevel Desingers:\n\n\n\nAI
-    Developers:\n\nUI Developers:\n\n\nSpecial Thanks:\n\n\n\n\n\n\n\n\n\n\n\n"
+  m_text: "Game Designers: \n\n\n\nProgrammers:\n\n\nModelers:\n\n\nLevel Desingers:\n\n\n\n\nAI
+    Developers:\n\nUI Developers:\n\n\nSpecial Thanks To Our Lord And Savor:\n\n\n\n\n\n\n\n\n\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1549,7 +1538,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 119
+  m_firstOverflowCharacterIndex: 141
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -1573,12 +1562,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 322453975}
-    characterCount: 127
+    characterCount: 150
     spriteCount: 0
-    spaceCount: 37
-    wordCount: 12
+    spaceCount: 43
+    wordCount: 17
     linkCount: 0
-    lineCount: 31
+    lineCount: 32
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -1917,7 +1906,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &411878932
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2875,7 +2864,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &641219581
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3892,19 +3881,21 @@ MonoBehaviour:
 
     Alex Dawson
 
-    Nhan Tran
-
-    Nic
-    Hendley (Outsource from China)
-
-
-    Nhan Tran
-
-
-    Jimmy Pham Ho
+    Kris Simmonds
 
     Nhan
     Tran
+
+    Nic Hendley (Outsource from China)
+
+
+    Nhan Tran
+
+
+    Jimmy Pham
+    Ho
+
+    Nhan Tran
 
 
     Mr. John Brosius
@@ -3979,12 +3970,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 855456300}
-    characterCount: 195
+    characterCount: 209
     spriteCount: 0
-    spaceCount: 41
-    wordCount: 34
+    spaceCount: 43
+    wordCount: 36
     linkCount: 0
-    lineCount: 21
+    lineCount: 22
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -6169,9 +6160,6 @@ MonoBehaviour:
     Jayden Graap
 
 
-    Kris Simmons
-
-
     Phero Luong
 
 
@@ -6223,7 +6211,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 116
+  m_firstOverflowCharacterIndex: 115
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -6247,12 +6235,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1442485668}
-    characterCount: 132
+    characterCount: 118
     spriteCount: 0
-    spaceCount: 27
-    wordCount: 19
+    spaceCount: 24
+    wordCount: 17
     linkCount: 0
-    lineCount: 15
+    lineCount: 13
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -6733,10 +6721,10 @@ RectTransform:
   m_Father: {fileID: 641219581}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -103}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: -354, y: -604}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1510523729
 MonoBehaviour:
@@ -6871,10 +6859,10 @@ RectTransform:
   m_Father: {fileID: 641219581}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 254}
-  m_SizeDelta: {x: 415.3, y: 90.1}
+  m_SizeDelta: {x: -98.70001, y: -543.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1513298779
 MonoBehaviour:
@@ -7189,10 +7177,10 @@ RectTransform:
   m_Father: {fileID: 641219581}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -25}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: -354, y: -604}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1555084731
 MonoBehaviour:
@@ -8109,10 +8097,10 @@ RectTransform:
   m_Father: {fileID: 641219581}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 123}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: -354, y: -604}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1707292528
 MonoBehaviour:
@@ -9740,10 +9728,10 @@ RectTransform:
   m_Father: {fileID: 641219581}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 48}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: -354, y: -604}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1945663013
 MonoBehaviour:
