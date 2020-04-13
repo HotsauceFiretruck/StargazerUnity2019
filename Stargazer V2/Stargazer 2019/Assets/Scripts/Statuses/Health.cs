@@ -4,6 +4,7 @@ public class Health : MonoBehaviour
 {
 
     public float entityHealth = 10;
+    public GameObject optionalExplosionEffect;
 
     public void SetHealth(int health)
     {
@@ -21,7 +22,26 @@ public class Health : MonoBehaviour
     {
         if (this.entityHealth <= 0)
         {
-            this.gameObject.GetComponent<Entity>().Death();
+            if (gameObject != null)
+            {
+                Entity entity = this.gameObject.GetComponent<Entity>();
+                if (entity != null)
+                {
+                    entity.Death();
+                } else
+                {
+                    if (optionalExplosionEffect != null)
+                    {
+                        GameObject explode = Instantiate(optionalExplosionEffect, transform.position, transform.rotation) as GameObject;
+                        explode.transform.localScale = transform.localScale * 2;
+                        ParticleSystem parts = explode.GetComponent<ParticleSystem>();
+                        float totalDuration = parts.main.duration + parts.main.startLifetime.constant;
+                        Destroy(explode, totalDuration);
+                    }
+
+                    Destroy(gameObject);
+                }
+            }
         }
     }
 }

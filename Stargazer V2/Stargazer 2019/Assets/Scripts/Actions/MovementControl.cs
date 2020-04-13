@@ -66,6 +66,9 @@ public class MovementControl : MonoBehaviour
         {
             entityBody.MovePosition(entityBody.position + new Vector3(ownerEntity.velocity.x, 0, ownerEntity.velocity.y) * Time.deltaTime);
             ownerEntity.position = transform.position;
+        } else
+        {
+            entityBody.velocity = new Vector3(0, entityBody.velocity.y, 0);
         }
     }
 }
