@@ -15,13 +15,11 @@ public class SpiderBossHealthText : MonoBehaviour
     {
         healthText.SetActive(false);
         spiderAI.spiderActivated += AwakenMyMaster;
-        print("Star");
     }
 
     void AwakenMyMaster()
     {
         healthText.SetActive(true);
-        print("AWae");
         activated = true;
     }
 

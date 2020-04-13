@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerUI : MonoBehaviour
 {
@@ -10,13 +11,16 @@ public class PlayerUI : MonoBehaviour
     private Text txtAmmo;
     private Text txtHealth;
     private Text txtInventory;
+    private Text txtObjective;
 
     public void Start()
     {
         txtAmmo = GameObject.Find("PlayerUI/Canvas/AmmoCounter").GetComponent<Text>();
         txtInventory = GameObject.Find("PlayerUI/Canvas/Inventory").GetComponent<Text>();
         txtHealth = GameObject.Find("PlayerUI/Canvas/HealthCounter").GetComponent<Text>();
+        txtObjective = GameObject.Find("PlayerUI/Canvas/Objective").GetComponent<Text>();
 
+        txtObjective.text = GameManager.GetObjective(SceneManager.GetActiveScene().buildIndex);
         playerInventory.inventoryChangeCallback += OnInventoryChange;
     }
 
