@@ -25,6 +25,7 @@ public class Player : Entity
             itemAction.EquipItem(weapon, playerView.transform);
         }
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         position = transform.position;
     }
 

@@ -2,7 +2,7 @@
 
 public class Shotgun : RangeWeapon
 {
-    private float timeBetweenTwoShots = .2f;
+    private float timeBetweenTwoShots = 0f;
     private float shotsFired = 0;
     private const int BULLET_PER_SHOT = 5;
 

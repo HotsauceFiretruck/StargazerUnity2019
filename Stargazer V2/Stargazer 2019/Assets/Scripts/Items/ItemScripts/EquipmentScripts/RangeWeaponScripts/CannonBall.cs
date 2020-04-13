@@ -14,8 +14,8 @@ public class CannonBall : MonoBehaviour
     public GameObject initParticle;
     public GameObject destroyParticle;
 
-    public float explosiveRadius = 5;
-    public float explosiveForce = 5;
+    public float explosiveRadius = 3;
+    public float explosiveForce = 10;
 
     void Start()
     {
@@ -76,7 +76,7 @@ public class CannonBall : MonoBehaviour
             }
             if (health != null)
             {
-                health.ChangeHealthBy(5);
+                health.ChangeHealthBy(15);
             }
         }
 
