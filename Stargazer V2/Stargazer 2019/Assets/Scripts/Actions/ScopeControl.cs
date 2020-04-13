@@ -18,7 +18,7 @@ public class ScopeControl : MonoBehaviour
     {
         if (view != null)
         {
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetMouseButton(2))
             {
                 isScoped = !isScoped;
 

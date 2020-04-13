@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 9e32b9372e827f340aaf1f5637a06363
+  - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: adbb081243edea94eba83531bf69e61b
   - enabled: 1
@@ -15,8 +18,11 @@ EditorBuildSettings:
     path: Assets/Scenes/NicsTotallyCoolAwesomeLevel.unity
     guid: 4ece69fd5432dde4392f18cdc2b79209
   - enabled: 1
-    path: Assets/Scenes/PitLevel.unity
+    path: Assets/Scenes/LaunchPadLevel.unity
     guid: f006d0b71f9f651409998f8e95f210a0
+  - enabled: 1
+    path: Assets/Scenes/GrappleLevel.unity
+    guid: 4f2d03d876ebb2145b22374abbb47df6
   - enabled: 1
     path: Assets/Scenes/SpiderBossLevel.unity
     guid: 4a3d040865bb3634eb7f225ed8d809b1
