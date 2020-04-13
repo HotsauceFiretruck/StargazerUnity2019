@@ -77,7 +77,7 @@ class TurretAI : MonoBehaviour
                     Deactivate();
                 }
 
-            } else if (GetComponent<Health>().entityHealth != maxHealth || Vector3.Distance(targetRef.position, transform.position) <= 10)
+            } else if (GetComponent<Health>().entityHealth != maxHealth || Vector3.Distance(targetRef.position, transform.position) <= 20)
             {
                 Transform parent = transform.parent;
                 if (parent != null)

@@ -35,7 +35,7 @@ public class Shotgun : RangeWeapon
 
                     Vector3 position = this.transform.GetChild(0).position + bulletDirection * .1f * i;
                     GameObject bulletClone = (GameObject)Instantiate(data.ammoType, position, this.transform.rotation);
-                    bulletClone.transform.localScale = new Vector3(.5f, .5f, .5f);
+                    bulletClone.transform.localScale = new Vector3(.05f, .05f, .05f);
                     Bullet bullet = bulletClone.GetComponent<Bullet>();
                     bullet.Init(bulletDirection, data.ammoSpeed, data.ammoRange);
                     bullet.SetDamageModifier(data.damageModifier);
