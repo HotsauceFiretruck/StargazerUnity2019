@@ -31,7 +31,7 @@ public class SMG : RangeWeapon
                 Vector3 position = this.transform.GetChild(0).position + bulletDirection * .2f;
 
                 GameObject bulletClone = (GameObject)Instantiate(data.ammoType, position, this.transform.rotation) as GameObject;
-                bulletClone.transform.localScale = new Vector3(0.05f, .05f, .05f);
+                bulletClone.transform.localScale = new Vector3(0.5f, .5f, .5f);
                 Bullet bullet = bulletClone.GetComponent<Bullet>();
                 bullet.Init(bulletDirection, data.ammoSpeed, data.ammoRange);
                 bullet.SetDamageModifier(data.damageModifier);

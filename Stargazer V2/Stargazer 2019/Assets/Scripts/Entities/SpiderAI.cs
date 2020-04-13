@@ -9,7 +9,6 @@ enum Stage
 
 public class SpiderAI : Entity
 {
-
     public Transform targetRef;
     public GameObject weaponPrefab;
     public GameObject deathExplosion;
@@ -18,6 +17,7 @@ public class SpiderAI : Entity
     private Stage currentStage = Stage.One;
     private float time = 0;
     public int maxInterval = 4;
+    private bool activate = false;
 
     void Start()
     {
@@ -34,7 +34,7 @@ public class SpiderAI : Entity
     {
         Quaternion q = Quaternion.LookRotation(targetRef.position - centerTransform.position);
 
-        centerTransform.rotation = Quaternion.Slerp(centerTransform.rotation, q, this.turnSpeed * Time.deltaTime);
+        centerTransform.rotation = Quaternion.RotateTowards(centerTransform.rotation, q, this.turnSpeed * Time.deltaTime);
 
         equipments[EquipmentType.Weapon].Activate();
     }
@@ -43,7 +43,7 @@ public class SpiderAI : Entity
     {
         Quaternion q = Quaternion.LookRotation(targetRef.position - centerTransform.position);
 
-        centerTransform.rotation = Quaternion.Slerp(centerTransform.rotation, q, this.turnSpeed * Time.deltaTime);
+        centerTransform.rotation = Quaternion.RotateTowards(centerTransform.rotation, q, this.turnSpeed * Time.deltaTime);
 
         equipments[EquipmentType.Weapon].ActivateSecondary();
     }
@@ -61,38 +61,51 @@ public class SpiderAI : Entity
     }
 
     private void Update()
-    {
-        time += Time.deltaTime;
-
-        if ((int) time % maxInterval == 0)
+    {   
+        if (targetRef != null)
         {
-            if (Physics.Raycast(transform.position, targetRef.position - transform.position, out RaycastHit hit))
+            if (!activate)
             {
-                if (hit.transform.CompareTag("Player"))
+                if (Vector3.Distance(targetRef.position, transform.position) <= 40.0f)
                 {
-                    if (Vector3.Distance(targetRef.position, transform.position) <= 10.0f)
-                    {
-                        currentStage = Stage.One;
-                    }
-                    else
-                    {
-                        currentStage = Stage.Two;
-                    }
-                }
-                else
-                {
-                    currentStage = Stage.Three;
+                    activate = true;
                 }
             }
             else
             {
-                currentStage = Stage.Three;
+                time += Time.deltaTime;
+
+                if ((int)time % maxInterval == 0)
+                {
+                    if (Physics.Raycast(transform.position, targetRef.position - transform.position, out RaycastHit hit))
+                    {
+                        if (hit.transform.CompareTag("Player"))
+                        {
+                            if (Vector3.Distance(targetRef.position, transform.position) <= 20.0f)
+                            {
+                                currentStage = Stage.One;
+                            }
+                            else
+                            {
+                                currentStage = Stage.Two;
+                            }
+                        }
+                        else
+                        {
+                            currentStage = Stage.Three;
+                        }
+                    }
+                    else
+                    {
+                        currentStage = Stage.Three;
+                    }
+                }
+
+                if (currentStage == Stage.One) StageOne();
+                if (currentStage == Stage.Two) StageTwo();
+                if (currentStage == Stage.Three) StageThree();
             }
         }
-
-        if (currentStage == Stage.One) StageOne();
-        if (currentStage == Stage.Two) StageTwo();
-        if (currentStage == Stage.Three) StageThree();
     }
 
     public override void Death()
@@ -100,7 +113,7 @@ public class SpiderAI : Entity
         if (deathExplosion != null)
         {
             GameObject explode = Instantiate(deathExplosion, transform.position, transform.rotation) as GameObject;
-            explode.transform.localScale = Vector3.one * 2;
+            explode.transform.localScale = Vector3.one * 9;
             ParticleSystem parts = explode.GetComponent<ParticleSystem>();
             float totalDuration = parts.main.duration + parts.main.startLifetime.constant;
             Destroy(explode, totalDuration);
